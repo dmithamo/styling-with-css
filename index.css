@@ -1,0 +1,187 @@
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  font-size: 15px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.subscript {
+  color: grey;
+  font-size: 0.6em;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  opacity: 0;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.visible {
+  opacity: 0.5;
+}
+
+header {
+  width: 100%;
+  margin: 0;
+}
+
+nav {
+  background-color: orange;
+  display: flex;
+  padding: 0.6em 0;
+  justify-content: space-between;
+}
+
+div.nav-part-two {
+  display: flex;
+  justify-content: flex-end;
+  /* Using default direction === flex-direction: row;
+  * Good for creating a horizontal nav-bar
+  */
+}
+
+p.nav-item {
+  cursor: pointer;
+  margin: 0 20px;
+  padding: 10px;
+}
+
+p.nav-item.portfolio {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+h2 {
+  margin: 0;
+}
+section {
+  width: 90%;
+  margin: auto;
+}
+
+div.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+button {
+  background-color: orange;
+  outline: none;
+  border: none;
+  padding: 1em;
+  font: inherit;
+  color: white;
+  margin: 10px 0;
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 170px;
+}
+
+button#annotate {
+  background-color: black;
+  border: 1px solid white;
+}
+
+button:hover,
+button#annotate:hover {
+  background-color: greenyellow;
+  color: black;
+}
+
+div#lists {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+div.in-lists {
+  width: 50%;
+  margin: 0 20px;
+  border: 1px solid orange;
+  padding: 0 2em;
+  height: 550px;
+}
+
+ol#list-horizontal {
+  /* Using flex-wrap to force horizontally aligned items
+  flow to the next line when size is smaller than enough
+  */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+ol#list-vertical {
+  /* Using flex-wrap to force vertically aligned items
+  flow to the next column when size is smaller than enough
+  */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 350px;
+}
+
+ol {
+  list-style: circle;
+  list-style-type: lower-roman;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  border: 1px solid orange;
+  margin: 12px;
+  padding: 0.8em;
+  height: 30px;
+  justify-content: center;
+}
+
+ol#list-horizontal > li:nth-child(even) {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 875px) {
+  div#lists,
+  div.in-lists {
+    width: 75%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+  }
+
+  h2 {
+    width: 75%;
+    margin: auto;
+    padding: 0;
+  }
+
+  p.secondary {
+    display: none;
+  }
+
+  button#switch {
+    display: none;
+  }
+
+  ol#list-vertical,
+  ol#list-horizontal {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+    padding: 0;
+    height: auto;
+  }
+
+  li {
+    width: 150px;
+    height: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+}
