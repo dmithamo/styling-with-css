@@ -1,18 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-const ButtonsContainer = ({ className }) => {
+const ButtonsContainer = ({
+  className,
+  onClickAnnotate,
+  onClickReverse,
+  annotateButtonText,
+}) => {
   return (
     <div className={className}>
-      <ReverseOrderButton
-        onClick={(e) => alert("Flip the positioning of the lists above: WIP")}
-      >
+      <ReverseOrderButton onClick={onClickReverse}>
         Reverse order
       </ReverseOrderButton>
-      <AnnotateButton
-        onClick={(e) => alert("Toggle the annotations on or off: WIP")}
-      >
-        Annotate
+      <AnnotateButton onClick={onClickAnnotate}>
+        {annotateButtonText}
       </AnnotateButton>
     </div>
   );
@@ -21,6 +22,7 @@ const ButtonsContainer = ({ className }) => {
 const StyledButtonsContainer = styled(ButtonsContainer)`
   display: flex;
   justify-content: space-around;
+  margin: 0 0 0 1em;
 `;
 
 const StyledButton = styled.button`
@@ -35,7 +37,7 @@ const StyledButton = styled.button`
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s;
-  width: 170px;
+  width: 200px;
 
   :hover {
     background-color: greenyellow;
@@ -43,8 +45,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const ReverseOrderButton = styled(StyledButton)`
-`
+const ReverseOrderButton = styled(StyledButton)``;
 
 const AnnotateButton = styled(StyledButton)`
   background-color: white;

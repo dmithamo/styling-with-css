@@ -54,7 +54,7 @@ const UnPriorityList = styled(StyledGenericOL)`
 const StyledLi = styled.li`
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 200px;
   border: 1px solid orange;
   margin: 12px;
   padding: 0.8em;
@@ -62,6 +62,5 @@ const StyledLi = styled.li`
   justify-content: center;
   :nth-child(even) {
     flex-grow: 1;
-    width: auto;
   }
 `;
